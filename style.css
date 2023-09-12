@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+   
+
+}
+@layer base {
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif capitalize font-medium;
+    }
+    h1 {}
+    h2 {@apply text-3xl leading-10 xl:text-5xl xl:leading-60 4xl:text-6xl 4xl:leading-72;} /*60*/
+    h3 {@apply text-2xl leading-8 xl:text-5xl xl:leading-60;} /*48*/
+    h4 {@apply text-xl leading-7 xl:text-4xl xl:leading-44;} /* 36 */
+    h5 {@apply text-xl leading-7 xl:text-3xl xl:leading-10;} /*30*/
+    h6 {@apply text-xl leading-7 xl:text-2xl xl:leading-8;} /* 24 */
+    
+    
+  
+}
+@layer utilities {  
+    .custom-container {  @apply mx-auto max-w-screen-2xl px-5;  }
+    .get-bonus{   @apply text-lg font-medium  }
+    
+}
+body{@apply font-sans;}
+.layout-sec{@apply pb-32;}
+.table-section{ @apply bg-black md:bg-inherit;}
+.bmn_table .t_head{    @apply md:block hidden bg-color-primery text-white text-sm uppercase leading-4;}
+.t_row {@apply text-center md:flex md:flex-row md:mb-0 mb-4 flex-col flex-wrap justify-between items-center;   }
+.t_col { @apply flex flex-col justify-center items-center}
+.t_head .t_col, .t_title {@apply h-50;} 
+.col_name, .col_rating, .col_score { @apply md:w-180 w-full px-5;}
+.col_bonus, .col_rating, .col_play { @apply xl:w-220 md:w-[150px] w-full py-4 px-4}
+
+.t_body .t_col {@apply min-h-150;  }
+.partner_row{ @apply md:text-light-grey text-white relative transition-all md:bg-white;}
+
+@media (max-width:992px){
+    .t_row.partner_row.first_row .logo{@apply pt-4;}
+    .partner_row{ @apply bg-partner-bg rounded-lg}
+    .dropdown-facts-inner{@apply hidden !important;}
+
+}
+.partner_row:nth-of-type(even){ @apply bg-light-bg}
+.partner_row.first_row .t_col { @apply z-10 relative  }
+.ribbon { @apply absolute top-0 left-0 h-[20px] py-[3px] px-4 bg-red text-white text-xs text-center whitespace-nowrap}
+.ribbon span { @apply relative top-[-6px] text-xs uppercase after:content-['']  after:absolute  after:top-[-3px]  after:right-[-30px]  after:border-[10px]  after:border-solid  after:border-red  after:border-l-[10px]  after:border-r-transparent;} 
+
+.partner_row .col_bonus p, .partner_row .col_bonus>div {@apply text-lg font-bold md:text-dark-grey text-white;}
+.partner_row .col_bonus>span { @apply hidden mb-1 md:text-grey text-white text-sm uppercase;}
+
+.partner_row.first_row .t_col { @apply z-10 relative  }
+.partner_row .col_rating>span { @apply mb-1 text-sm}
+.list_stars { @apply flex justify-center}
+.star { @apply cursor-pointer mt-4  mr-[3px]  font-normal text-center decoration-inherit md:text-grey text-white;}
+.star.filled, .star.hiver{@apply text-yellow}
+.star.empty{@apply text-grey}
+.partner_row .read-review { @apply mt-4 underline md:text-light-blue text-yellow} 
+.read-review, .ribbon, .visit-site { @apply inline-block text-sm;}
+.col_score {@apply md:w-140 w-full;}
+.partner_row .col_score span {@apply mb-3 md:text-light-blue text-white text-[50px] font-medium;}
+.facts {@apply transition-all uppercase w-[111px] m-auto border border-color-primery rounded leading-7 md:block hidden px-2 text-color-primery text-xs hover:bg-color-primery hover:text-white hover:transition-all;}
+.partner_options ul {@apply mb-0 pl-4 md:text-grey text-white text-xs leading-5;}
+.t_body .t_col { @apply md:min-h-150 h-auto min-h-initial;}
+.read-review, .ribbon, .visit-site { @apply inline-block text-base;    }
+.partner_row .read-review { @apply mt-4 transition-all hover:text-dark-grey hover:transition-all;}
+.col_options{@apply md:w-[170px] w-full}
+.get-bonus {@apply  md:w-full w-auto py-3 md:px-1 px-5 shadow-btn-shadow lg:bg-bonus-btn rounded lg:text-sm text-lg font-medium
+     text-white text-center decoration-inherit uppercase mb-4 lg:hover:bg-bonus-btn-hover bg-btn-mob;}
+.visit-site{@apply md:text-light-blue text-yellow underline transition-all hover:text-dark-grey hover:transition-all}
+
+.dropdown-facts{@apply block px-8 py-4 static bg-white w-full z-10 top-full h-[0px] transition-all ease-in-out duration-300 invisible opacity-0 border-t border-off-white;}
+.dropdown-facts.active { @apply visible transition-all ease-in-out duration-300 opacity-100 h-[200px] static;}
+.dropdown-facts-inner {@apply flex justify-between;}
+.tf_col {@apply pl-8 bg-no-repeat bg-left-top }
+.tf_col h4 {@apply leading-7 text-base font-medium}
+.tf_col ul {@apply list-none mt-2}
+.tf_col ul li { @apply flex justify-between items-center text-sm leading-8 w-[290px] max-w-full border-b border-off-white }
+.partner_website { @apply flex flex-col items-start min-w-[130px];}
+.partner_website ul li { @apply border-transparent w-[260px];}
+.partner_website ul li a { @apply text-light-blue text-sm no-underline block mb-1 hover:underline}
+.col_play {@apply relative;}
+
+#viewers { @apply shadow-viewer-shadow xl:flex hidden justify-center items-center border border-off-white rounded-lg bg-white md:text-light-grey text-white text-[11px] leading-3
+     h-[36px] w-[242px] absolute bottom-[-15px] left-[-10px] z-50 invisible after:content-['']  after:absolute  after:top-[-6px]  after:left-[50%]  after:h-[10px] after:w-[10px] after:bg-white after:border-r-black after:border-b-black after:rotate-[225deg]}
+
+.col_play:hover #viewers {@apply visible !important; }
+
+.s_title {@apply items-center flex flex-wrap}
+
+.s_title.align-center, .s_title.align-end { @apply pt-5 pb-5 items-end}
+.s_title h1 {@apply text-3xl text-white pl-4   }
+
+.col_games, .game-title {@apply relative lg:w-[190px] w-full}
+.col_games ul, .game-title {@apply flex items-center justify-center}
+.col_games ul li {@apply mr-3 rounded-full bg-white}
+.game-title span {@apply w-full mr-3 text-xs text-center mt-3;}
+.col_games .img-main img {@apply w-full h-full rounded-full transition-all;}
+.modal {@apply hidden z-20 fixed top-0 left-0 w-full h-full overflow-y-auto}
+
+.modal.modal-open { @apply bg-black bg-opacity-60;   }
+
+.modal-content { @apply shadow-popup-shadow inline-block absolute top-[50%] left-[50%] rounded bg-modal-bg opacity-0}
+.modal-content {    transform: translate(-50%, -50%) scale(.6);}
+
+.modal-content:not(.container) { @apply p-3}
+
+.modal.modal-open .modal-content { opacity: 1;    transform: translate(-50%, 0)}
+.bmn_twocol, .thanks-for-rating { @apply flex items-end}
+.modal-content h3, .modal-content span { @apply text-xl text-yellow font-light }
+
+.thanks-for-rating img { @apply w-[32px] h-[32px] mr-3}
